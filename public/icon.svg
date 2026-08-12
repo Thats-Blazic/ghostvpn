@@ -1,0 +1,17 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" rx="37" fill="#060309" />
+  <path
+    d="M90 34C64.6 34 44 54.6 44 80V138.5C44 141.9 47.9 143.8 50.6 141.7L61.5 133.2L72.9 142.1C74.7 143.5 77.2 143.5 79 142.1L90 133.5L101 142.1C102.8 143.5 105.3 143.5 107.1 142.1L118.5 133.2L129.4 141.7C132.1 143.8 136 141.9 136 138.5V80C136 54.6 115.4 34 90 34Z"
+    fill="#A855F7" />
+  <path
+    d="M90 34C64.6 34 44 54.6 44 80V138.5C44 141.9 47.9 143.8 50.6 141.7L61.5 133.2L72.9 142.1C74.7 143.5 77.2 143.5 79 142.1L90 133.5L101 142.1C102.8 143.5 105.3 143.5 107.1 142.1L118.5 133.2L129.4 141.7C132.1 143.8 136 141.9 136 138.5V80C136 54.6 115.4 34 90 34Z"
+    fill="url(#ghost_gradient)" fill-opacity="0.55" />
+  <circle cx="72" cy="80" r="8" fill="#060309" />
+  <circle cx="108" cy="80" r="8" fill="#060309" />
+  <defs>
+    <linearGradient id="ghost_gradient" x1="44" y1="34" x2="136" y2="143.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A855F7" />
+      <stop offset="1" stop-color="#E879F9" />
+    </linearGradient>
+  </defs>
+</svg>
