@@ -4,28 +4,28 @@ import { Ghost } from "lucide-react";
 
 const LINKS = {
   product: [
-    { name: "features",          href: "#features" },
-    { name: "how-it-works",      href: "#how-it-works" },
-    { name: "server-network",    href: "#servers" },
-    { name: "browser-extension", href: "#extension" },
-    { name: "pricing",           href: "#pricing" },
+    { name: "features",          href: "/#features" },
+    { name: "how-it-works",      href: "/#how-it-works" },
+    { name: "server-network",    href: "/#servers" },
+    { name: "browser-extension", href: "/#extension" },
+    { name: "pricing",           href: "/#pricing" },
   ],
   resources: [
-    { name: "help-center",   href: "#" },
-    { name: "setup-guides",  href: "#" },
-    { name: "server-status", href: "#" },
-    { name: "no-logs-audit", href: "#security" },
+    { name: "help-center",   href: "/help-center" },
+    { name: "setup-guides",  href: "/setup-guides" },
+    { name: "server-status", href: "/server-status" },
+    { name: "no-logs-audit", href: "/no-logs-audit" },
   ],
   company: [
-    { name: "about",   href: "#" },
-    { name: "careers", href: "#" },
-    { name: "press",   href: "#" },
-    { name: "contact", href: "#" },
+    { name: "about",   href: "/about" },
+    { name: "careers", href: "/careers" },
+    { name: "press",   href: "/press" },
+    { name: "contact", href: "/contact" },
   ],
   legal: [
-    { name: "privacy-policy",   href: "#" },
-    { name: "terms-of-service", href: "#" },
-    { name: "refund-policy",    href: "#" },
+    { name: "privacy-policy",   href: "/privacy-policy" },
+    { name: "terms-of-service", href: "/terms-of-service" },
+    { name: "refund-policy",    href: "/refund-policy" },
   ],
 };
 
@@ -35,7 +35,7 @@ export function FooterSection() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-[1.2fr_2fr] border-b border-[#211a30]">
           <div className="p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-[#211a30]">
-            <a href="#" className="inline-flex items-center gap-2.5 mb-5 group">
+            <a href="/" className="inline-flex items-center gap-2.5 mb-5 group">
               <div className="w-7 h-7 border border-[#a855f7] flex items-center justify-center">
                 <Ghost className="w-4 h-4 text-[#a855f7]" strokeWidth={2} />
               </div>

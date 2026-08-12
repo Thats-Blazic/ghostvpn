@@ -1,21 +1,25 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Ghost } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Menu, X, Ghost, LogOut } from "lucide-react";
+import { useAuth } from "@/lib/auth-context";
 
 const navLinks = [
-  { name: "features",     href: "#features" },
-  { name: "how-it-works", href: "#how-it-works" },
-  { name: "extension",    href: "#extension" },
-  { name: "servers",      href: "#servers" },
-  { name: "security",     href: "#security" },
-  { name: "pricing",      href: "#pricing" },
+  { name: "features",     href: "/#features" },
+  { name: "how-it-works", href: "/#how-it-works" },
+  { name: "extension",    href: "/#extension" },
+  { name: "servers",      href: "/#servers" },
+  { name: "security",     href: "/#security" },
+  { name: "pricing",      href: "/#pricing" },
 ];
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [time, setTime] = useState("");
+  const { user, logout } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
     const tick = () => setTime(new Date().toLocaleTimeString("en-US", { hour12: false }));
@@ -53,7 +57,7 @@ export function Navigation() {
         {/* Main nav */}
         <div className="px-6 lg:px-12 h-14 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
+          <a href="/" className="flex items-center gap-2.5 group">
             <div className="relative w-7 h-7 border border-[#a855f7] flex items-center justify-center">
               <Ghost className="w-4 h-4 text-[#a855f7]" strokeWidth={2} />
               <div className="absolute inset-0 bg-[#a855f7]/10 group-hover:bg-[#a855f7]/20 transition-colors" />
@@ -78,11 +82,30 @@ export function Navigation() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="#" className="text-[12px] text-[#8f82a6] hover:text-[#e8e6f0] transition-colors">
-              login
-            </a>
+            {user ? (
+              <div className="flex items-center gap-3">
+                <a
+                  href="/dashboard"
+                  className="text-[11px] text-[#39ff88] flex items-center gap-1.5 hover:underline"
+                >
+                  <span className="w-1.5 h-1.5 bg-[#39ff88] rounded-full inline-block status-pulse" />
+                  root@{user.name.split(" ")[0].toLowerCase()}
+                </a>
+                <button
+                  onClick={() => { logout(); router.push("/"); }}
+                  className="text-[12px] text-[#8f82a6] hover:text-[#ff4d6d] transition-colors flex items-center gap-1.5"
+                  title="logout"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            ) : (
+              <a href="/login" className="text-[12px] text-[#8f82a6] hover:text-[#e8e6f0] transition-colors">
+                login
+              </a>
+            )}
             <a
-              href="#pricing"
+              href="/#pricing"
               className="text-[12px] bg-[#a855f7] text-[#030209] px-4 h-9 flex items-center hover:bg-[#c084fc] transition-colors font-bold"
             >
               [ get_ghost_vpn ]
@@ -123,9 +146,34 @@ export function Navigation() {
             </a>
           ))}
         </div>
-        <div className="mt-auto p-8 border-t border-[#211a30]">
+        <div className="mt-auto p-8 border-t border-[#211a30] space-y-3">
+          {user ? (
+            <>
+              <a
+                href="/dashboard"
+                onClick={() => setOpen(false)}
+                className="w-full block text-center text-sm border border-[#39ff88]/40 text-[#39ff88] py-4"
+              >
+                [ dashboard ]
+              </a>
+              <button
+                onClick={() => { logout(); setOpen(false); router.push("/"); }}
+                className="w-full flex items-center justify-center gap-2 text-center text-sm border border-[#4a3f5f] text-[#e8e6f0] py-4"
+              >
+                <LogOut className="w-4 h-4" /> logout ({user.name.split(" ")[0].toLowerCase()})
+              </button>
+            </>
+          ) : (
+            <a
+              href="/login"
+              onClick={() => setOpen(false)}
+              className="w-full block text-center text-sm border border-[#4a3f5f] text-[#e8e6f0] py-4"
+            >
+              [ login ]
+            </a>
+          )}
           <a
-            href="#pricing"
+            href="/#pricing"
             onClick={() => setOpen(false)}
             className="w-full block text-center text-sm bg-[#a855f7] text-[#030209] py-5 font-bold"
           >
