@@ -2,6 +2,7 @@ import { Navigation } from "@/components/landing/navigation";
 import { HeroSection } from "@/components/landing/hero-section";
 import { FeaturesSection } from "@/components/landing/features-section";
 import { HowItWorksSection } from "@/components/landing/how-it-works-section";
+import { AppShowcaseSection } from "@/components/landing/app-showcase-section";
 import { DevelopersSection } from "@/components/landing/developers-section";
 import { InfrastructureSection } from "@/components/landing/infrastructure-section";
 import { SecuritySection } from "@/components/landing/security-section";
@@ -18,6 +19,7 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <HowItWorksSection />
+      <AppShowcaseSection />
       <DevelopersSection />
       <InfrastructureSection />
       <SecuritySection />

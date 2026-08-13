@@ -262,6 +262,9 @@
 }
 .status-pulse { animation: status-pulse 1.5s ease-in-out infinite; }
 
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
 /* ── GLITCH ─────────────────────────────────────── */
 @keyframes glitch-1 {
   0%, 92%, 100% { clip-path: inset(0 0 0 0); transform: translate(0, 0); }

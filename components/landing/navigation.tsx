@@ -9,6 +9,7 @@ const navLinks = [
   { name: "download",     href: "/download" },
   { name: "features",     href: "/#features" },
   { name: "how-it-works", href: "/#how-it-works" },
+  { name: "app",          href: "/#app" },
   { name: "extension",    href: "/#extension" },
   { name: "servers",      href: "/#servers" },
   { name: "security",     href: "/#security" },
