@@ -1,4 +1,5 @@
-import { Ghost, EyeOff, ShieldCheck, Globe2 } from "lucide-react";
+import { EyeOff, ShieldCheck, Globe2 } from "lucide-react";
+import { LogoMark } from "@/components/logo";
 import { PageShell } from "@/components/page-shell";
 import { TerminalWindow } from "@/components/landing/terminal-window";
 
@@ -25,9 +26,7 @@ export default function AboutPage() {
       <TerminalWindow title="manifesto.txt" status="cat" statusColor="#a855f7" className="mb-8">
         <div className="p-7 lg:p-10">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-9 h-9 border border-[#a855f7] flex items-center justify-center shrink-0">
-              <Ghost className="w-4 h-4 text-[#a855f7]" />
-            </div>
+            <LogoMark size={36} />
             <p className="text-[12px] text-[#4a3f5f]">$ whoami</p>
           </div>
           <p className="text-[14px] text-[#8f82a6] leading-relaxed mb-5">

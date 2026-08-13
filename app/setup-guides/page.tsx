@@ -1,14 +1,23 @@
-import { Monitor, Laptop, Smartphone, Chrome, Router, TerminalSquare } from "lucide-react";
+import { Monitor, Laptop, Smartphone, Chrome, Router, TerminalSquare, Download } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { TerminalWindow } from "@/components/landing/terminal-window";
 
-const GUIDES = [
+interface Guide {
+  platform: string;
+  icon: typeof Monitor;
+  cmd: string;
+  steps: string[];
+  download?: string;
+}
+
+const GUIDES: Guide[] = [
   {
     platform: "windows",
     icon: Monitor,
     cmd: "winget install GhostVPN.Client",
+    download: "/downloads/Ghost-VPN-Setup.exe",
     steps: [
-      "Download the installer from your dashboard or run the winget command",
+      "Download the installer below or run the winget command",
       "Sign in with your account email and password",
       "Pick a server and hit connect — or enable auto-connect on startup",
     ],
@@ -108,6 +117,17 @@ export default function SetupGuidesPage() {
                     </li>
                   ))}
                 </ol>
+
+                {g.download && (
+                  <a
+                    href={g.download}
+                    download
+                    className="mt-5 w-full inline-flex items-center justify-center gap-2 bg-[#a855f7] text-[#030209] text-[12px] font-bold px-5 py-3 hover:bg-[#c084fc] transition-colors"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    [ download_ghost-vpn-setup.exe ] — free
+                  </a>
+                )}
               </div>
             </TerminalWindow>
           );

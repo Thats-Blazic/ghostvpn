@@ -269,8 +269,11 @@ function DashboardContent({ planId, email, name }: { planId: string; email: stri
               );
             })}
             {devices.length < limit && (
-              <div className="px-5 py-4 text-[11px] text-[#4a3f5f]">
-                {limit - devices.length} device slot{limit - devices.length > 1 ? "s" : ""} available
+              <div className="px-5 py-4 text-[11px] text-[#4a3f5f] flex items-center justify-between gap-3">
+                <span>{limit - devices.length} device slot{limit - devices.length > 1 ? "s" : ""} available</span>
+                <a href="/download" className="text-[#a855f7] hover:text-[#c084fc] transition-colors shrink-0">
+                  + download_app
+                </a>
               </div>
             )}
           </div>

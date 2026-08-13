@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Chrome } from "lucide-react";
+import { ArrowRight, Chrome, Download } from "lucide-react";
 import { TerminalWindow } from "./terminal-window";
 
 export function CtaSection() {
@@ -42,10 +42,17 @@ export function CtaSection() {
               <div className="text-[#8f82a6] mb-4">
                 $ curl -sSL ghostvpn.sh/install | sh<span className="caret text-[#39ff88]">█</span>
               </div>
-              <div className="flex flex-col sm:flex-row items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-center gap-3 flex-wrap">
                 <a
-                  href="#pricing"
+                  href="/download"
                   className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#a855f7] text-[#030209] text-[13px] font-bold px-7 py-4 hover:bg-[#c084fc] transition-colors duration-200"
+                >
+                  <Download className="w-4 h-4" />
+                  [ download_free ]
+                </a>
+                <a
+                  href="/#pricing"
+                  className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-[#4a3f5f] text-[#e8e6f0] text-[13px] px-7 py-4 hover:border-[#39ff88]/50 hover:text-[#39ff88] transition-colors duration-200"
                 >
                   [ get_ghost_vpn ]
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />

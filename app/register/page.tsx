@@ -3,7 +3,8 @@
 import { useState, type FormEvent, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { Ghost, ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import { LogoMark } from "@/components/logo";
 import { Navigation } from "@/components/landing/navigation";
 import { FooterSection } from "@/components/landing/footer-section";
 import { TerminalWindow } from "@/components/landing/terminal-window";
@@ -143,10 +144,8 @@ export default function RegisterPage() {
       <section className="relative pt-[140px] pb-24 px-6 grid-bg">
         <div className="max-w-[480px] mx-auto">
           <div className="text-center mb-8">
-            <Link href="/" className="inline-flex items-center gap-2.5 mb-6">
-              <div className="w-8 h-8 border border-[#a855f7] flex items-center justify-center">
-                <Ghost className="w-4 h-4 text-[#a855f7]" strokeWidth={2} />
-              </div>
+            <Link href="/" className="inline-flex mb-6">
+              <LogoMark size={40} />
             </Link>
             <span className="eyebrow justify-center mb-3">$ useradd --new</span>
             <h1 className="font-display text-3xl lg:text-4xl text-[#e8e6f0] uppercase tracking-tight">

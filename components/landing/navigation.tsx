@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Menu, X, Ghost, LogOut } from "lucide-react";
+import { Menu, X, LogOut } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 
 const navLinks = [
+  { name: "download",     href: "/download" },
   { name: "features",     href: "/#features" },
   { name: "how-it-works", href: "/#how-it-works" },
   { name: "extension",    href: "/#extension" },
@@ -57,11 +58,9 @@ export function Navigation() {
         {/* Main nav */}
         <div className="px-6 lg:px-12 h-14 flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2.5 group">
-            <div className="relative w-7 h-7 border border-[#a855f7] flex items-center justify-center">
-              <Ghost className="w-4 h-4 text-[#a855f7]" strokeWidth={2} />
-              <div className="absolute inset-0 bg-[#a855f7]/10 group-hover:bg-[#a855f7]/20 transition-colors" />
-            </div>
+          <a href="/" className="group inline-flex items-center gap-2.5">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/icon.svg" alt="Ghost VPN" width={30} height={30} className="w-[30px] h-[30px] rounded-[9px]" />
             <span className="font-display text-lg tracking-tight text-[#e8e6f0]">
               ghost<span className="text-[#a855f7]">_</span>vpn
             </span>

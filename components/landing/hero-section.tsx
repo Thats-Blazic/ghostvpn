@@ -92,10 +92,10 @@ export function HeroSection() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-9">
             <a
-              href="#pricing"
+              href="/download"
               className="w-full sm:w-auto text-center text-[14px] font-bold bg-[#a855f7] text-[#030209] px-7 py-4 hover:bg-[#c084fc] transition-colors"
             >
-              [ ./install-ghost-vpn.sh ]
+              [ ./install-ghost-vpn.sh ] — free
             </a>
             <a
               href="#extension"
