@@ -104,7 +104,7 @@ function LoginForm() {
 
 export default function LoginPage() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#030209]">
+    <main className="relative min-h-dvh overflow-x-hidden bg-[#030209]">
       <Navigation />
       <section className="relative pt-[140px] pb-24 px-6 grid-bg">
         <div className="max-w-[480px] mx-auto">

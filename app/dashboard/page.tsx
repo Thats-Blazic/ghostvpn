@@ -356,9 +356,9 @@ export default function DashboardPage() {
   }, [loading, user, router]);
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#030209]">
+    <main className="relative min-h-dvh overflow-x-hidden bg-[#030209]">
       <Navigation />
-      <section className="relative pt-[130px] pb-24 px-6 grid-bg min-h-screen">
+      <section className="relative pt-[130px] pb-24 px-6 grid-bg min-h-dvh">
         <div className="max-w-[1300px] mx-auto">
           {loading || !user ? (
             <div className="text-center py-24 text-[13px] text-[#4a3f5f] flex items-center justify-center gap-2">

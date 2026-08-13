@@ -16,7 +16,7 @@ export function PageShell({
   children: ReactNode;
 }) {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#030209]">
+    <main className="relative min-h-dvh overflow-x-hidden bg-[#030209]">
       <Navigation />
       <section className="relative pt-[130px] pb-24 px-6 grid-bg">
         <div className="mx-auto" style={{ maxWidth }}>

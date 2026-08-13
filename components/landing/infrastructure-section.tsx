@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Globe2, Server, Gauge } from "lucide-react";
+import { Globe2, Server, Gauge, Zap } from "lucide-react";
 
 const STATS = [
   { icon: Globe2, v: "65",     l: "countries covered" },
@@ -10,14 +10,14 @@ const STATS = [
 ];
 
 const LOCATIONS = [
-  { city: "Amsterdam", country: "NL", ping: 8,  load: 34 },
-  { city: "New York",  country: "US", ping: 14, load: 58 },
-  { city: "London",    country: "UK", ping: 11, load: 41 },
-  { city: "Frankfurt",  country: "DE", ping: 16, load: 22 },
-  { city: "Singapore",  country: "SG", ping: 22, load: 67 },
-  { city: "Tokyo",      country: "JP", ping: 27, load: 45 },
-  { city: "Toronto",    country: "CA", ping: 19, load: 30 },
-  { city: "Zurich",     country: "CH", ping: 13, load: 18 },
+  { city: "Amsterdam", country: "NL", flag: "nl", ping: 8,  load: 34 },
+  { city: "New York",  country: "US", flag: "us", ping: 14, load: 58 },
+  { city: "London",    country: "UK", flag: "gb", ping: 11, load: 41 },
+  { city: "Frankfurt",  country: "DE", flag: "de", ping: 16, load: 22 },
+  { city: "Singapore",  country: "SG", flag: "sg", ping: 22, load: 67 },
+  { city: "Tokyo",      country: "JP", flag: "jp", ping: 27, load: 45 },
+  { city: "Toronto",    country: "CA", flag: "ca", ping: 19, load: 30 },
+  { city: "Zurich",     country: "CH", flag: "ch", ping: 13, load: 18 },
 ];
 
 export function InfrastructureSection() {
@@ -85,25 +85,67 @@ export function InfrastructureSection() {
           {LOCATIONS.map((loc, i) => (
             <div
               key={loc.city}
-              className={`row-hover grid grid-cols-2 sm:grid-cols-[1fr_80px_140px_60px] gap-4 px-1 py-3.5 border-b border-[#211a30] items-center transition-all duration-500 ${
+              className={`row-hover border-b border-[#211a30] px-1 py-3.5 transition-all duration-500 ${
                 vis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: `${300 + i * 50}ms` }}
             >
-              <div className="flex items-center gap-2.5 min-w-0">
-                <span className="w-1.5 h-1.5 bg-[#39ff88] shrink-0" />
-                <p className="text-[13px] text-[#e8e6f0] truncate">
-                  {loc.city} <span className="text-[#4a3f5f]">/{loc.country}</span>
-                </p>
-              </div>
-              <span className="text-[12px] text-[#a855f7] tabular-nums">{loc.ping}ms</span>
-              <div className="hidden sm:flex items-center gap-2">
-                <div className="flex-1 h-1.5 bg-[#100b1a] border border-[#211a30]">
-                  <div className="h-full bg-[#a855f7]" style={{ width: `${loc.load}%` }} />
+              {/* Desktop row */}
+              <div className="hidden sm:grid grid-cols-[1fr_80px_140px_60px] gap-4 items-center">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/${loc.flag}.svg`}
+                    alt={`${loc.country} flag`}
+                    className="w-4 h-4 rounded-full shrink-0 object-cover border border-[#211a30]"
+                  />
+                  <p className="text-[13px] text-[#e8e6f0] truncate">
+                    {loc.city} <span className="text-[#4a3f5f]">/{loc.country}</span>
+                  </p>
                 </div>
-                <span className="text-[10px] text-[#4a3f5f] w-8 tabular-nums">{loc.load}%</span>
+                <span className="flex items-center gap-1.5 text-[12px] text-[#39ff88] tabular-nums">
+                  <Zap className="w-3 h-3 shrink-0" strokeWidth={2.25} />
+                  {loc.ping}ms
+                </span>
+                <div className="flex items-center gap-2">
+                  <div className="flex-1 h-1.5 bg-[#100b1a] border border-[#211a30]">
+                    <div className="h-full bg-[#a855f7]" style={{ width: `${loc.load}%` }} />
+                  </div>
+                  <span className="text-[10px] text-[#4a3f5f] w-8 tabular-nums">{loc.load}%</span>
+                </div>
+                <span className="text-[10px] text-[#39ff88] text-right tracking-wider">ONLINE</span>
               </div>
-              <span className="text-[10px] text-[#39ff88] text-right tracking-wider">ONLINE</span>
+
+              {/* Mobile row */}
+              <div className="sm:hidden flex flex-col gap-2.5">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`https://cdn.jsdelivr.net/gh/hatscripts/circle-flags/flags/${loc.flag}.svg`}
+                      alt={`${loc.country} flag`}
+                      className="w-4 h-4 rounded-full shrink-0 object-cover border border-[#211a30]"
+                    />
+                    <p className="text-[13px] text-[#e8e6f0] truncate">
+                      {loc.city} <span className="text-[#4a3f5f]">/{loc.country}</span>
+                    </p>
+                  </div>
+                  <span className="flex items-center gap-1.5 text-[12px] text-[#39ff88] tabular-nums shrink-0">
+                    <Zap className="w-3 h-3 shrink-0" strokeWidth={2.25} />
+                    {loc.ping}ms
+                  </span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <div className="flex-1 h-1.5 bg-[#100b1a] border border-[#211a30]">
+                    <div className="h-full bg-[#a855f7]" style={{ width: `${loc.load}%` }} />
+                  </div>
+                  <span className="text-[10px] text-[#4a3f5f] tabular-nums shrink-0">{loc.load}% load</span>
+                  <span className="text-[10px] text-[#39ff88] tracking-wider shrink-0 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 bg-[#39ff88] rounded-full inline-block status-pulse" />
+                    ONLINE
+                  </span>
+                </div>
+              </div>
             </div>
           ))}
         </div>

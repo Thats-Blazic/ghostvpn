@@ -14,7 +14,7 @@ import { FooterSection } from "@/components/landing/footer-section";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#030209]">
+    <main className="relative min-h-dvh overflow-x-hidden bg-[#030209]">
       <Navigation />
       <HeroSection />
       <FeaturesSection />

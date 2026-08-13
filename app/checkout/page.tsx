@@ -447,9 +447,9 @@ function CheckoutContent() {
 
 export default function CheckoutPage() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#030209]">
+    <main className="relative min-h-dvh overflow-x-hidden bg-[#030209]">
       <Navigation />
-      <section className="relative pt-[130px] pb-24 px-6 grid-bg min-h-screen">
+      <section className="relative pt-[130px] pb-24 px-6 grid-bg min-h-dvh">
         <div className="max-w-[1100px] mx-auto">
           <div className="mb-10">
             <span className="eyebrow mb-3 block">$ ghost-vpn checkout</span>

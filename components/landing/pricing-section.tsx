@@ -38,11 +38,11 @@ export function PricingSection() {
             <span className={`text-[12px] transition-colors ${!annual ? "text-[#e8e6f0]" : "text-[#4a3f5f]"}`}>monthly</span>
             <button
               onClick={() => setAnnual(!annual)}
-              className="relative w-12 h-6 border border-[#211a30] bg-[#100b1a] flex items-center"
+              className="relative w-12 h-6 shrink-0 border border-[#211a30] bg-[#100b1a]"
             >
-              <div className={`w-[18px] h-[18px] bg-[#a855f7] transition-transform duration-300 mx-0.5 ${annual ? "translate-x-6" : "translate-x-0"}`} />
+              <span className={`absolute left-1 top-1 w-4 h-4 bg-[#a855f7] transition-transform duration-300 ${annual ? "translate-x-[22px]" : "translate-x-0"}`} />
             </button>
-            <span className={`text-[12px] transition-colors ${annual ? "text-[#e8e6f0]" : "text-[#4a3f5f]"}`}>annual</span>
+            <span className={`text-[12px] transition-colors ${annual ? "text-[#e8e6f0]" : "text-[#4a3f5f]"}`}>annually</span>
             {annual && (
               <span className="text-[10px] text-[#39ff88] border border-[#39ff88]/30 px-2 py-1">
                 -45%

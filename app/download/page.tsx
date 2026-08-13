@@ -49,7 +49,7 @@ export default function DownloadPage() {
             className="group mt-7 w-full inline-flex items-center justify-center gap-2 bg-[#a855f7] text-[#030209] text-[14px] font-bold px-7 py-4 hover:bg-[#c084fc] transition-colors duration-200"
           >
             <Download className="w-4 h-4" />
-            [ download_{WINDOWS_FILE.name.toLowerCase()} ] — it&apos;s free
+            DOWNLOAD NOW
           </a>
 
           <p className="text-[11px] text-[#4a3f5f] mt-4">

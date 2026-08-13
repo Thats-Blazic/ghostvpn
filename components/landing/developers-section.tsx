@@ -98,9 +98,9 @@ export function DevelopersSection() {
                   <span className="text-[12px] font-bold text-[#e8e6f0]">ghost_vpn.ext</span>
                   <button
                     onClick={() => setOn(!on)}
-                    className={`relative w-11 h-6 border transition-colors duration-300 ${on ? "bg-[#a855f7]/20 border-[#a855f7]" : "bg-[#100b1a] border-[#211a30]"}`}
+                    className={`relative w-11 h-6 shrink-0 border transition-colors duration-300 ${on ? "bg-[#a855f7]/20 border-[#a855f7]" : "bg-[#100b1a] border-[#211a30]"}`}
                   >
-                    <span className={`absolute top-[3px] w-3.5 h-3.5 transition-transform duration-300 ${on ? "translate-x-[22px] bg-[#a855f7]" : "translate-x-1 bg-[#4a3f5f]"}`} />
+                    <span className={`absolute left-1 top-1 w-4 h-4 transition-transform duration-300 ${on ? "translate-x-5 bg-[#a855f7]" : "translate-x-0 bg-[#4a3f5f]"}`} />
                   </button>
                 </div>
 

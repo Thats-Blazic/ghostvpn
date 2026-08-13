@@ -58,7 +58,7 @@ export function HeroSection() {
   useEffect(() => { setVisible(true); }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden grid-bg pt-[110px] pb-16">
+    <section className="relative min-h-dvh flex flex-col justify-center overflow-hidden grid-bg pt-[110px] pb-16">
       {/* Matrix rain background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.22]">
         <MatrixRain className="w-full h-full" />

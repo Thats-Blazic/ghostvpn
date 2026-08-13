@@ -29,24 +29,6 @@ export const PLANS: Plan[] = [
     style: "plain",
   },
   {
-    id: "premium",
-    name: "premium",
-    pkg: "ghost-vpn-premium",
-    tagline: "Full protection, every device",
-    price: { mo: 12.99, yr: 7.99 },
-    features: [
-      "Up to 6 devices at once",
-      "All 65 countries · 6,500+ servers",
-      "AES-256 + WireGuard® protocol",
-      "Automatic kill switch",
-      "Browser extension included",
-      "Streaming & torrenting unblocked",
-      "24/7 live chat support",
-    ],
-    cta: "install premium",
-    style: "highlight",
-  },
-  {
     id: "ghost",
     name: "ghost",
     pkg: "ghost-vpn-ghost --root",
@@ -65,10 +47,28 @@ export const PLANS: Plan[] = [
     cta: "sudo install ghost",
     style: "ghost",
   },
+  {
+    id: "premium",
+    name: "premium",
+    pkg: "ghost-vpn-premium",
+    tagline: "Full protection, every device",
+    price: { mo: 12.99, yr: 7.99 },
+    features: [
+      "Up to 6 devices at once",
+      "All 65 countries · 6,500+ servers",
+      "AES-256 + WireGuard® protocol",
+      "Automatic kill switch",
+      "Browser extension included",
+      "Streaming & torrenting unblocked",
+      "24/7 live chat support",
+    ],
+    cta: "install premium",
+    style: "highlight",
+  },
 ];
 
 export function getPlan(id: string | null | undefined): Plan {
-  return PLANS.find((p) => p.id === id) ?? PLANS[1];
+  return PLANS.find((p) => p.id === id) ?? PLANS.find((p) => p.id === "premium") ?? PLANS[0];
 }
 
 export function formatPrice(n: number): string {
